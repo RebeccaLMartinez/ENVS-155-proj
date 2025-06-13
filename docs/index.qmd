@@ -129,13 +129,18 @@ timevis(
 ::: {.card}
 
 ```{r echo=FALSE, warning=FALSE}
-
-
 leaflet() %>%
   addTiles() %>%
   addMarkers(lng = -120.444229, lat = 34.666243, popup = "Lompoc Riverbend Trail Start") %>%
-  addMarkers(lng = -120.435763, lat = 34.647437, popup = "Lompoc Riverbend Trail End")
-
+  addMarkers(lng = -120.435763, lat = 34.647437, popup = "Lompoc Riverbend Trail End") %>%
+  addPolylines(
+    lng = c(-120.441735, -120.442517),
+    lat = c(34.659200, 34.660210),
+    color = "red",
+    weight = 6,
+    opacity = 0.5,
+    popup = "Proposed Edible Trail Stretch"
+  )
 ```
 :::
 
