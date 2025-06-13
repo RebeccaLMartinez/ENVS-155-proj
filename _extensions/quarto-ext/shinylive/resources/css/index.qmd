@@ -3,7 +3,9 @@ title: "🌿 Edible Trail Proposal: Growing a Healthier, Connected Lompoc"
 format: 
   html:
     theme: journal
-    css: styles.css  
+    css: styles.css 
+filters:
+   - shinylive
 ---
 
 
