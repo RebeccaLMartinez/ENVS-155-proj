@@ -14,6 +14,7 @@ library(leaflet)
 library(timevis)
 library(htmltools)
 library(jsonlite)
+library(here)
 
 ```
 
@@ -22,14 +23,9 @@ library(jsonlite)
 ::: {.card .p-4 .mb-4}
 We propose transforming underused spaces across Lompoc into a network of edible walking trails — places where people can connect, move, and nourish themselves in every sense.
 
-<p>
-  <a href="edible-trail-proposal.pdf" target="_blank" rel="noopener noreferrer">
-    📄 View Full PDF Document
-  </a>
-</p>
+[📄 Click here to download the Edible Trail Proposal (PDF)](edible-trail-proposal.pdf)
+
 :::
-
-
 
 # What Is the Edible Trail?
 
@@ -48,7 +44,7 @@ Each trail would include:
 :::
 
 
-# 📍 Why Lompoc?
+# Why Lompoc?
 
 
 ::: {.card .p-4 .mb-4}
@@ -66,7 +62,8 @@ The Edible Trail proposal responds to those needs while supporting health, equit
 :::
 
 
-# 🗓️ Proposed Project Timeline
+# Proposed Project Timeline
+
 
 ::: {.card .p-3 .mb-2}
 <span style="display:inline-block; width:16px; height:16px; background:#1f77b4; margin-right:6px; vertical-align:middle;"></span> Phase 1: Planning & Engagement  
@@ -127,7 +124,8 @@ timevis(
 ```
 
 
-# 🗺️  Initial Trail & Proposed Locations  
+# Initial Trail & Proposed Locations
+
 
 ::: {.card}
 
@@ -143,7 +141,7 @@ leaflet() %>%
 :::
 
 
-# 🤝 Community Roles in the Process
+# Community Roles in the Process
 
 
 ::: {.card .p-4 .mb-4}
@@ -160,7 +158,7 @@ If funded and approved, this project would move forward with deep community invo
 This proposal centers equity, access, and shared ownership — and would create a lasting legacy rooted in care.
 :::
 
-# 📌 What’s Next?
+# What’s Next?
 
 
 ::: {.card .p-4 .mb-4}
@@ -175,3 +173,6 @@ We're currently seeking:
 Have ideas or want to support this proposal?
 📧 Contact us at edibletrail@lompoc.org
 :::
+
+
+
