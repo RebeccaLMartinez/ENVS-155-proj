@@ -1,5 +1,9 @@
 
 
+body {
+  background-color: #e6f4ea !important; /* light green background */
+}
+
 /* ===================== */
 /* Phase Group Styling   */
 /* ===================== */
@@ -104,4 +108,14 @@ details[open] {
   white-space: normal;
   position: relative;     /* keep it positioned within timeline */
   z-index: 20;            /* bring above other elements */
+}
+
+/* Background and text */
+body {
+  background-color: #e6f4ea;       /* Soft pale green */
+  color: #1a3c1a;                  /* Dark forest green text */
+  font-family: 'Merriweather', serif;
+  margin: 0;
+  padding: 2rem;
+  line-height: 1.6;
 }

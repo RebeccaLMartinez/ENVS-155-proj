@@ -1,11 +1,17 @@
 ---
-title: "🌿 Edible Trail Proposal: Growing a Healthier, Connected Lompoc"
+title: "🌿 Edible Trail Proposal for Growing a Healthier, Connected Lompoc"
 format: 
   html:
     theme: journal
     toc: true
     css: styles.css 
 ---
+
+---
+
+<div style="text-align:center; margin-bottom:1.5rem;">
+  <img src="lompoc-sign.jpg" alt="Edible Trail Banner" style="max-width: 100%; height: auto; border-radius: 10px;">
+</div>
 
 ```{r include=FALSE}
 
@@ -18,13 +24,13 @@ library(here)
 
 ```
 
+---
 
 # A Community-Centered Vision
 ::: {.card .p-4 .mb-4}
-We propose transforming underused spaces across Lompoc into a network of edible walking trails — places where people can connect, move, and nourish themselves in every sense.
+We aim to transform Lompoc’s underused green spaces into a network of edible walking trails — vibrant corridors where people can connect, move, and nourish themselves through nature and community.
 
-
-[📄 Click here to download the Edible Trail Proposal](edible-trail-proposal.pdf){.btn target="_blank"}
+[📄 View Edible Trail Proposal](edible-trail-proposal.pdf){.btn target="_blank"}
 :::
 
 # What Is the Edible Trail?
@@ -46,7 +52,6 @@ Each trail would include:
 
 # Why Lompoc?
 
-
 ::: {.card .p-4 .mb-4}
 Lompoc is rich in open space and community pride — yet many green spaces feel disconnected, underutilized, or unsafe. Community feedback has emphasized the need for:
 
@@ -64,8 +69,12 @@ The Edible Trail proposal responds to those needs while supporting health, equit
 
 # Proposed Project Timeline
 
+The proposed project spans 24 months and unfolds in three phases. It begins with planning and outreach, followed by planting, programming, and long-term stewardship.
+
+Explore the interactive timeline to see how the project will take root and grow over time.
 
 ::: {.card .p-3 .mb-2}
+
 <span style="display:inline-block; width:16px; height:16px; background:#1f77b4; margin-right:6px; vertical-align:middle;"></span> Phase 1: Planning & Engagement  
 <span style="display:inline-block; width:16px; height:16px; background:#2ca02c; margin-right:6px; vertical-align:middle; margin-left:10px;"></span> Phase 2: Installation & Activation  
 <span style="display:inline-block; width:16px; height:16px; background:#ff7f0e; margin-right:6px; vertical-align:middle; margin-left:10px;"></span> Phase 3: Stewardship & Expansion  
@@ -124,8 +133,11 @@ timevis(
 ```
 
 
-# Initial Trail & Proposed Locations
+# Proposed Location
 
+This pilot project proposes to enhance a segment of the **Lompoc Riverbend Multi-Use Trail**, a paved path that runs alongside the Santa Ynez River. 
+
+View the interactive map below to explore the current trail and proposed site for the first edible trail segment.
 
 ::: {.card}
 
