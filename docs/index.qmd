@@ -23,8 +23,8 @@ library(here)
 ::: {.card .p-4 .mb-4}
 We propose transforming underused spaces across Lompoc into a network of edible walking trails — places where people can connect, move, and nourish themselves in every sense.
 
-[📄 Click here to download the Edible Trail Proposal (PDF)](edible-trail-proposal.pdf)
 
+[📄 Click here to download the Edible Trail Proposal (PDF](../edible-trail-proposal.pdf){.btn target="_blank"}
 :::
 
 # What Is the Edible Trail?
