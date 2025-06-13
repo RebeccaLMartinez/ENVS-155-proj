@@ -1,0 +1,16 @@
+
+/* Color the phase bars */
+.phase-1 .vis-item-content {
+  background-color: #5dade2 !important; /* blue */
+  color: white !important;
+}
+
+.phase-2 .vis-item-content {
+  background-color: #58d68d !important; /* green */
+  color: white !important;
+}
+
+.phase-3 .vis-item-content {
+  background-color: #f5b041 !important; /* orange */
+  color: white !important;
+}
