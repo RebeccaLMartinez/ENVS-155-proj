@@ -2,12 +2,10 @@
 title: "🌿 Edible Trail Proposal: Growing a Healthier, Connected Lompoc"
 format: 
   html:
-    theme: minty
-    toc: true
-    self-contained: true
-    css: styles.css
-editor: visual
+    theme: journal
+    css: styles.css  
 ---
+
 
 ```{r include=FALSE}
 
@@ -20,18 +18,18 @@ library(jsonlite)
 ```
 
 
-
-::: {.card .p-4 .mb-4}
 # A Community-Centered Vision
-
+::: {.card .p-4 .mb-4}
 We propose transforming underused spaces across Lompoc into a network of edible walking trails — places where people can connect, move, and nourish themselves in every sense.
 
-<a href="/edible-trail-proposal.pdf" target="_blank" style="display:inline-block; padding:10px 20px; background-color:#1f77b4; color:white; border-radius:5px; text-decoration:none; font-weight:bold;">
-📄 View Full Proposal
-</a>
+<p>
+  <a href="edible-trail-proposal.pdf" target="_blank" rel="noopener noreferrer">
+    📄 View Full PDF Document
+  </a>
+</p>
 :::
 
----
+
 
 # What Is the Edible Trail?
 
@@ -49,10 +47,11 @@ Each trail would include:
 🤝 Hands-on engagement through workshops and planting days
 :::
 
----
 
 # 📍 Why Lompoc?
 
+
+::: {.card .p-4 .mb-4}
 Lompoc is rich in open space and community pride — yet many green spaces feel disconnected, underutilized, or unsafe. Community feedback has emphasized the need for:
 
 - Safer, more walkable neighborhoods
@@ -64,16 +63,15 @@ Lompoc is rich in open space and community pride — yet many green spaces feel 
 - Community-driven projects that build trust and pride
 
 The Edible Trail proposal responds to those needs while supporting health, equity, and climate resilience.
-
----
+:::
 
 
 # 🗓️ Proposed Project Timeline
 
 ::: {.card .p-3 .mb-2}
-<span style="display:inline-block; width:16px; height:16px; background:#1f77b4; margin-right:6px; vertical-align:middle;"></span> Phase 1: Planning & Engagement
-<span style="display:inline-block; width:16px; height:16px; background:#2ca02c; margin-right:6px; vertical-align:middle; margin-left:10px;"></span> Phase 2: Installation & Activation
-<span style="display:inline-block; width:16px; height:16px; background:#ff7f0e; margin-right:6px; vertical-align:middle; margin-left:10px;"></span> Phase 3: Stewardship & Expansion
+<span style="display:inline-block; width:16px; height:16px; background:#1f77b4; margin-right:6px; vertical-align:middle;"></span> Phase 1: Planning & Engagement  
+<span style="display:inline-block; width:16px; height:16px; background:#2ca02c; margin-right:6px; vertical-align:middle; margin-left:10px;"></span> Phase 2: Installation & Activation  
+<span style="display:inline-block; width:16px; height:16px; background:#ff7f0e; margin-right:6px; vertical-align:middle; margin-left:10px;"></span> Phase 3: Stewardship & Expansion  
 :::
 
 ```{r edible-trail-timeline, echo=FALSE}
@@ -81,56 +79,55 @@ The Edible Trail proposal responds to those needs while supporting health, equit
 timeline_data <- data.frame(
   id = 1:10,
   content = c(
-    "📝 Community Introduction & Feedback",
-    "👥 Advisory Committee & Partnerships",
-    "📍 Site Identification & Design Workshops",
-    "💰 Fundraising & Resource Gathering",
-    "📐 Final Design & Site Prep",
-    "🌱 Community Planting & Trail Build-Out",
-    "🎉 Programming & Community Events",
-    "🧤 Volunteer Stewardship & Maintenance",
-    "📊 Monitoring & Feedback Loops",
-    "🚀 Expansion & Policy Integration"
+    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">📝 Community Introduction & Feedback</summary><p style="margin-top:5px;">Gather feedback from residents and host listening sessions to shape project goals.</p></details>',
+    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">👥 Advisory Committee & Partnerships</summary><p style="margin-top:5px;">Form committee and identify key community and institutional partners.</p></details>',
+    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">📍 Site Identification & Design Workshops</summary><p style="margin-top:5px;">Hold workshops to select and design trail locations.</p></details>',
+    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">💰 Fundraising & Resource Gathering</summary><p style="margin-top:5px;">Secure funding and gather materials for trail implementation.</p></details>',
+    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">📐 Final Design & Site Prep</summary><p style="margin-top:5px;">Complete detailed designs and prepare sites for construction.</p></details>',
+    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">🌱 Community Planting & Trail Build-Out</summary><p style="margin-top:5px;">Plant native and edible species and build trail infrastructure.</p></details>',
+    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">🎉 Programming & Community Events</summary><p style="margin-top:5px;">Organize events to promote trail use and community engagement.</p></details>',
+    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">🧤 Volunteer Stewardship & Maintenance</summary><p style="margin-top:5px;">Recruit and train volunteers for ongoing trail stewardship.</p></details>',
+    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">📊 Monitoring & Feedback Loops</summary><p style="margin-top:5px;">Track trail use, collect feedback, and make improvements.</p></details>',
+    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">🚀 Expansion & Policy Integration</summary><p style="margin-top:5px;">Plan future trail expansions and integrate with local policies.</p></details>'
   ),
   start = as.Date(c(
-    "2025-07-01",  "2025-08-15",  "2025-09-15",  "2025-11-01",
-    "2026-03-01",  "2026-04-15",  "2026-06-01",
-    "2026-08-01",  "2026-10-01",  "2027-01-01"
+    "2025-07-01", "2025-08-15", "2025-09-15", "2025-11-01",
+    "2026-03-01", "2026-04-15", "2026-06-01",
+    "2026-08-01", "2026-10-01", "2027-01-01"
   )),
   end = as.Date(c(
-    "2025-08-10",  "2025-09-30",  "2025-10-30",  "2026-01-15",
-    "2026-04-10",  "2026-05-30",  "2026-07-30",
-    "2026-10-01",  "2026-12-30",  "2027-03-15"
+    "2025-08-10", "2025-09-30", "2025-10-30", "2026-01-15",
+    "2026-04-10", "2026-05-30", "2026-07-30",
+    "2026-10-01", "2026-12-30", "2027-03-15"
   )),
   style = c(
-    "background-color: #1f77b4; color: white;",  # Phase 1 blue
-    "background-color: #1f77b4; color: white;",
-    "background-color: #1f77b4; color: white;",
-    "background-color: #1f77b4; color: white;",
-    "background-color: #2ca02c; color: white;",  # Phase 2 green
-    "background-color: #2ca02c; color: white;",
-    "background-color: #2ca02c; color: white;",
-    "background-color: #ff7f0e; color: white;",  # Phase 3 orange
-    "background-color: #ff7f0e; color: white;",
-    "background-color: #ff7f0e; color: white;"
+    rep("background-color: #1f77b4; color: white;", 4),
+    rep("background-color: #2ca02c; color: white;", 3),
+    rep("background-color: #ff7f0e; color: white;", 3)
   )
 )
 
 timevis(
   timeline_data,
-  height = "300px",
+  height = "250px",
   width = "100%",
   options = list(
     zoomKey = "ctrlKey",
-    maxHeight = 400
+    min = as.Date("2025-07-01"),
+    max = as.Date("2027-06-30"),
+    start = as.Date("2025-07-01"),      # initial view start
+    end = as.Date("2026-06-30"),        # initial view end (12 months shown first)
+    maxHeight = 800,
+    useContent = TRUE
   )
 )
+
+
+
 ```
 
 
----
-
-# Trail Map
+# 🗺️  Initial Trail & Proposed Locations  
 
 ::: {.card}
 
@@ -145,9 +142,11 @@ leaflet() %>%
 ```
 :::
 
----
 
 # 🤝 Community Roles in the Process
+
+
+::: {.card .p-4 .mb-4}
 If funded and approved, this project would move forward with deep community involvement at every stage:
 
 - Listening sessions and site selection workshops
@@ -159,11 +158,12 @@ If funded and approved, this project would move forward with deep community invo
 - Ongoing programming, events, and maintenance teams
 
 This proposal centers equity, access, and shared ownership — and would create a lasting legacy rooted in care.
-
----
+:::
 
 # 📌 What’s Next?
 
+
+::: {.card .p-4 .mb-4}
 We're currently seeking:
 
 - Community feedback: Look for us at upcoming events!
@@ -174,4 +174,4 @@ We're currently seeking:
 
 Have ideas or want to support this proposal?
 📧 Contact us at edibletrail@lompoc.org
-
+:::

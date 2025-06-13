@@ -1,17 +1,19 @@
-/* Color backgrounds of group label bars */
+/* ===================== */
+/* Phase Group Styling   */
+/* ===================== */
+
+/* Group Background Colors */
 .vis-time-axis .vis-background.vis-group-0 {
-  background-color: #1f77b4 !important; /* Phase 1 blue */
+  background-color: #1f77b4 !important; /* Phase 1: Blue */
 }
-
 .vis-time-axis .vis-background.vis-group-1 {
-  background-color: #2ca02c !important; /* Phase 2 green */
+  background-color: #2ca02c !important; /* Phase 2: Green */
 }
-
 .vis-time-axis .vis-background.vis-group-2 {
-  background-color: #ff7f0e !important; /* Phase 3 orange */
+  background-color: #ff7f0e !important; /* Phase 3: Orange */
 }
 
-/* Color group labels */
+/* Group Label Colors */
 .vis-labelset .vis-label.vis-group-0 {
   color: #1f77b4 !important;
   font-weight: bold;
@@ -23,4 +25,81 @@
 .vis-labelset .vis-label.vis-group-2 {
   color: #ff7f0e !important;
   font-weight: bold;
+}
+
+/* Allow details content to show outside the timeline item */
+.vis-item,
+.vis-item-content,
+.vis-foreground,
+.vis-group,
+.vis-timeline {
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 10;
+}
+
+/* Style for <details> summary to make it look clickable and readable */
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  outline: none; /* removes default focus outline */
+  user-select: none;
+  padding: 4px 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+/* Style for expanded details panel */
+details[open] {
+  background-color: rgba(255, 255, 255, 0.15); /* subtle highlight when open */
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-top: 6px;
+  color: #000;  /* Dark text for readability */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  white-space: normal;
+  line-height: 1.4;
+  max-width: 350px;  /* prevent too wide dropdown */
+  word-wrap: break-word;
+}
+
+/* Ensure text inside details content wraps nicely */
+details p {
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+/* Optional: smooth open/close transition */
+details[open] {
+  transition: background-color 0.3s ease;
+}
+.vis-time-axis .vis-background.vis-group-0,
+.vis-time-axis .vis-background.vis-group-1,
+.vis-time-axis .vis-background.vis-group-2 {
+  height: 100% !important;          /* Full vertical height */
+  min-height: 400px !important;    /* Or match your timeline height */
+  top: 0 !important;               /* Align to top */
+  position: absolute !important;   /* Ensure absolute positioning */
+}
+.vis-timeline {
+  min-height: 400px;       /* Adjust to match timeline height */
+  overflow-y: auto;        /* Enable vertical scroll if needed */
+  position: relative;      /* To position background bands correctly */
+}
+details[open] {
+  background-color: rgba(255, 255, 255, 0.15); /* subtle background to highlight open */
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 400px;       /* wider dropdown */
+  font-size: 1.1rem;      /* slightly larger text */
+  line-height: 1.5;       /* more line spacing */
+  color: #000;            /* make sure text is black */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* subtle shadow */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  position: relative;     /* keep it positioned within timeline */
+  z-index: 20;            /* bring above other elements */
 }

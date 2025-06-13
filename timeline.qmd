@@ -1,86 +1,71 @@
 ---
-title: "Lompoc Edible Trail Project Dashboard"
+title: "Timeline"
 format: 
   html:
-    code-fold: true
-    theme: cosmo
-runtime: shiny
+    css: timeline.css  
+    self-contained: true
 ---
 
-# Welcome
 
-Welcome to the interactive dashboard for the Lompoc Edible Trail Project. Explore our timeline, maps, and latest updates!
 
-# Project Timeline
+```{r include=FALSE}
 
-```{r}
+library(shiny)
+library(leaflet)
 library(timevis)
+library(htmltools)
+library(jsonlite)
 
-events <- data.frame(
+```
+
+
+
+```{r, echo=FALSE}
+timeline_data <- data.frame(
   id = 1:10,
   content = c(
-    "Community Intro & Feedback",
-    "Advisory Committee Formation",
-    "Site Selection",
-    "Fundraising",
-    "Design & Site Prep",
-    "Planting & Build-Out",
-    "Community Programming",
-    "Maintenance & Stewardship",
-    "Monitoring & Feedback",
-    "Expansion Planning"
+    "📝 Community Introduction & Feedback",
+    "👥 Advisory Committee & Partnerships",
+    "📍 Site Identification & Design Workshops",
+    "💰 Fundraising & Resource Gathering",
+    "📐 Final Design & Site Prep",
+    "🌱 Community Planting & Trail Build-Out",
+    "🎉 Programming & Community Events",
+    "🧤 Volunteer Stewardship & Maintenance",
+    "📊 Monitoring & Feedback Loops",
+    "🚀 Expansion & Policy Integration"
   ),
-  start = c("2024-07-01", "2024-09-01", "2024-11-01", "2025-01-01", 
-            "2025-03-01", "2025-05-01", "2025-07-01", "2025-09-01", 
-            "2025-11-01", "2026-01-01"),
-  end = c("2025-02-28", "2024-10-31", "2024-12-31", "2025-02-28", 
-          "2025-06-30", "2025-08-31", "2025-10-31", "2026-02-28", 
-          "2026-04-30", "2026-06-30")
+  start = as.Date(c(
+    "2025-07-01",  "2025-08-15",  "2025-09-15",  "2025-11-01",
+    "2026-03-01",  "2026-04-15",  "2026-06-01",
+    "2026-08-01",  "2026-10-01",  "2027-01-01"
+  )),
+  end = as.Date(c(
+    "2025-08-10",  "2025-09-30",  "2025-10-30",  "2026-01-15",
+    "2026-04-10",  "2026-05-30",  "2026-07-30",
+    "2026-10-01",  "2026-12-30",  "2027-03-15"
+  )),
+  style = c(
+    "background-color: #1f77b4; color: white;",  # Phase 1 blue
+    "background-color: #1f77b4; color: white;",
+    "background-color: #1f77b4; color: white;",
+    "background-color: #1f77b4; color: white;",
+    "background-color: #2ca02c; color: white;",  # Phase 2 green
+    "background-color: #2ca02c; color: white;",
+    "background-color: #2ca02c; color: white;",
+    "background-color: #ff7f0e; color: white;",  # Phase 3 orange
+    "background-color: #ff7f0e; color: white;",
+    "background-color: #ff7f0e; color: white;"
+  )
 )
 
-timevis(events)
+timevis(
+  timeline_data,
+  height = "300px",
+  width = "100%",
+  options = list(
+    zoomKey = "ctrlKey",
+    maxHeight = 400
+  )
+)
 ```
-
-# Map of Trail Segments
-
-```{r}
-
-library(leaflet)
-
-leaflet() %>%
-  addTiles() %>%
-  addMarkers(lng = -120.464, lat = 34.639, popup = "Lompoc Riverbend Trail Start") %>%
-  addCircleMarkers(lng = c(-120.464, -120.459), lat = c(34.639, 34.645),
-                   label = c("Trail Segment 1", "Pilot Edible Segment"))
-
-```
-
-# Latest Updates
-
-July 2024: Community meetings ongoing. Join us at Old Town Fridays!
-August 2024: Advisory Committee formed. Seeking volunteers for planting days.
-
-# Get Involved
-
-
----
-
-## 4. Hosting & Sharing
-
-- Deploy on **shinyapps.io** (free tier available) or your own server.
-- Or publish as a **Quarto website** on GitHub Pages with embedded shinylive apps for lightweight interactivity.
-- Share link via social media, newsletters, city websites, and community centers.
-
----
-
-## 5. Next Steps from Here
-
-- Would you want help with actual R/Quarto code for the timeline or map?  
-- Interested in a fully interactive Shiny app example?  
-- Do you have geo data (coordinates) for the trail and key sites?  
-- Would you like templates for updating the dashboard with new progress info?
-
----
-
-Feel free to share more details or priorities, and I can help you build a customized, practical dashboard to engage your community effectively!
-
