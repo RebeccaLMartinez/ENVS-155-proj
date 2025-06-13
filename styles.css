@@ -1,16 +1,26 @@
-
-/* Color the phase bars */
-.phase-1 .vis-item-content {
-  background-color: #5dade2 !important; /* blue */
-  color: white !important;
+/* Color backgrounds of group label bars */
+.vis-time-axis .vis-background.vis-group-0 {
+  background-color: #1f77b4 !important; /* Phase 1 blue */
 }
 
-.phase-2 .vis-item-content {
-  background-color: #58d68d !important; /* green */
-  color: white !important;
+.vis-time-axis .vis-background.vis-group-1 {
+  background-color: #2ca02c !important; /* Phase 2 green */
 }
 
-.phase-3 .vis-item-content {
-  background-color: #f5b041 !important; /* orange */
-  color: white !important;
+.vis-time-axis .vis-background.vis-group-2 {
+  background-color: #ff7f0e !important; /* Phase 3 orange */
+}
+
+/* Color group labels */
+.vis-labelset .vis-label.vis-group-0 {
+  color: #1f77b4 !important;
+  font-weight: bold;
+}
+.vis-labelset .vis-label.vis-group-1 {
+  color: #2ca02c !important;
+  font-weight: bold;
+}
+.vis-labelset .vis-label.vis-group-2 {
+  color: #ff7f0e !important;
+  font-weight: bold;
 }

@@ -1,113 +1,177 @@
 ---
-title: "Lompoc Edible Trail Proposal Dashboard"
-format: html
-runtime: shiny
-css: styles.css
+title: "🌿 Edible Trail Proposal: Growing a Healthier, Connected Lompoc"
+format: 
+  html:
+    theme: minty
+    toc: true
+    self-contained: true
+    css: styles.css
+editor: visual
 ---
 
-
-```{r echo = FALSE, message=FALSE}
+```{r include=FALSE}
 
 library(shiny)
 library(leaflet)
 library(timevis)
+library(htmltools)
+library(jsonlite)
+
 ```
 
-<style> /* Your custom CSS */ body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #f9f9f9; color: #333; line-height: 1.6; } h1, h2, h3 { color: #2c3e50; font-weight: 700; margin-top: 1.5em; margin-bottom: 0.5em; } .timevis-event { border-radius: 8px !important; box-shadow: 0 2px 6px rgba(0,0,0,0.15); font-weight: 600; } .phase-1 { background-color: #4a90e2 !important; color: white !important; font-size: 1.1em !important; } .phase-2 { background-color: #f5a623 !important; color: white !important; font-size: 1.1em !important; } .phase-3 { background-color: #7ed321 !important; color: white !important; font-size: 1.1em !important; } .leaflet-container { border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); height: 450px !important; } .summary-highlight { background: #fff; padding: 15px 20px; border-radius: 8px; box-shadow: 0 1px 5px rgba(0,0,0,0.1); margin-bottom: 1em; } .get-involved { margin-top: 30px; background: #fff; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.15); font-size: 1.1em; font-weight: 600; color: #2c3e50; } </style>
-
-## Welcome to the ***Lompoc Edible Trail Project*** info page! This site was created to stay transparent. You will be able to check out the timeline, track progress, stay informed, or get engaged.
-
-# Proposed Solution
-
-<div style="max-height:300px; overflow-y:auto; padding: 10px; border: 1px solid #ccc;"> To address limited food access and fragmented green infrastructure, this project proposes a community-driven edible and ecological trail system. It will transform underutilized public spaces into green corridors providing fresh food, environmental benefits, and social cohesion.<br><br> The trail will include fruit & nut trees, native plants, shaded paths, educational signage, and produce-sharing kiosks — creating multifunctional spaces blending ecology and food production. </div>
-
-# Community Engagement & Co-Design
-
-<div style="max-height:300px; overflow-y:auto; padding: 10px; border: 1px solid #ccc;"> Sustained community involvement is key, with workshops, advisory committees, and participatory design. The project embraces local narratives, bilingual signage, and culturally relevant elements to foster trust and long-term stewardship. </div>
 
 
-# Proposed Timeline
+::: {.card .p-4 .mb-4}
+# A Community-Centered Vision
+
+We propose transforming underused spaces across Lompoc into a network of edible walking trails — places where people can connect, move, and nourish themselves in every sense.
+
+<a href="/edible-trail-proposal.pdf" target="_blank" style="display:inline-block; padding:10px 20px; background-color:#1f77b4; color:white; border-radius:5px; text-decoration:none; font-weight:bold;">
+📄 View Full Proposal
+</a>
+:::
+
+---
+
+# What Is the Edible Trail?
+
+::: {.card .p-4 .mb-4}
+The Edible Trail is a proposed series of green corridors filled with edible and native plants — designed with community input to reflect local needs, culture, and environment.
+
+Each trail would include:
+
+🍊 Edible landscaping (fruit trees, herbs, native plants)
+
+🌳 Shade, seating, and safe walking paths
+
+🎨 Community-led design, art, and signage
+
+🤝 Hands-on engagement through workshops and planting days
+:::
+
+---
+
+# 📍 Why Lompoc?
+
+Lompoc is rich in open space and community pride — yet many green spaces feel disconnected, underutilized, or unsafe. Community feedback has emphasized the need for:
+
+- Safer, more walkable neighborhoods
+
+- Intergenerational gathering spaces
+
+- Access to fresh food and nature
+
+- Community-driven projects that build trust and pride
+
+The Edible Trail proposal responds to those needs while supporting health, equity, and climate resilience.
+
+---
 
 
-```{r, echo=FALSE}
+# 🗓️ Proposed Project Timeline
 
-library(timevis)
+::: {.card .p-3 .mb-2}
+<span style="display:inline-block; width:16px; height:16px; background:#1f77b4; margin-right:6px; vertical-align:middle;"></span> Phase 1: Planning & Engagement
+<span style="display:inline-block; width:16px; height:16px; background:#2ca02c; margin-right:6px; vertical-align:middle; margin-left:10px;"></span> Phase 2: Installation & Activation
+<span style="display:inline-block; width:16px; height:16px; background:#ff7f0e; margin-right:6px; vertical-align:middle; margin-left:10px;"></span> Phase 3: Stewardship & Expansion
+:::
 
-phase_colors <- c(
-  "Phase 1" = "#5dade2",
-  "Phase 2" = "#58d68d",
-  "Phase 3" = "#f5b041"
-)
+```{r edible-trail-timeline, echo=FALSE}
 
-tasks <- data.frame(
-  id = 1:9,
+timeline_data <- data.frame(
+  id = 1:10,
   content = c(
-    "Community Intro & Feedback",
-    "Advisory Committee Formation",
-    "Site Selection",
-    "Fundraising",
-    "Installation",
-    "Community Planting",
-    "Programming Launch",
-    "Maintenance",
-    "Monitoring & Expansion"
+    "📝 Community Introduction & Feedback",
+    "👥 Advisory Committee & Partnerships",
+    "📍 Site Identification & Design Workshops",
+    "💰 Fundraising & Resource Gathering",
+    "📐 Final Design & Site Prep",
+    "🌱 Community Planting & Trail Build-Out",
+    "🎉 Programming & Community Events",
+    "🧤 Volunteer Stewardship & Maintenance",
+    "📊 Monitoring & Feedback Loops",
+    "🚀 Expansion & Policy Integration"
   ),
-  start = c(
-    "2025-10-01", "2025-12-01", "2026-01-01",
-    "2026-03-01", "2026-06-01", "2026-07-01",
-    "2026-09-01", "2026-12-01", "2027-03-01"
-  ),
-  end = c(
-    "2025-11-30", "2025-12-31", "2026-02-28",
-    "2026-05-31", "2026-07-31", "2026-08-31",
-    "2026-11-30", "2027-05-31", "2027-09-30"
-  ),
-  group = c(
-    "Phase 1", "Phase 1", "Phase 1",
-    "Phase 1", "Phase 2", "Phase 2",
-    "Phase 2", "Phase 3", "Phase 3"
-  ),
-  stringsAsFactors = FALSE
+  start = as.Date(c(
+    "2025-07-01",  "2025-08-15",  "2025-09-15",  "2025-11-01",
+    "2026-03-01",  "2026-04-15",  "2026-06-01",
+    "2026-08-01",  "2026-10-01",  "2027-01-01"
+  )),
+  end = as.Date(c(
+    "2025-08-10",  "2025-09-30",  "2025-10-30",  "2026-01-15",
+    "2026-04-10",  "2026-05-30",  "2026-07-30",
+    "2026-10-01",  "2026-12-30",  "2027-03-15"
+  )),
+  style = c(
+    "background-color: #1f77b4; color: white;",  # Phase 1 blue
+    "background-color: #1f77b4; color: white;",
+    "background-color: #1f77b4; color: white;",
+    "background-color: #1f77b4; color: white;",
+    "background-color: #2ca02c; color: white;",  # Phase 2 green
+    "background-color: #2ca02c; color: white;",
+    "background-color: #2ca02c; color: white;",
+    "background-color: #ff7f0e; color: white;",  # Phase 3 orange
+    "background-color: #ff7f0e; color: white;",
+    "background-color: #ff7f0e; color: white;"
+  )
 )
 
-timevis(tasks)
-
-
+timevis(
+  timeline_data,
+  height = "300px",
+  width = "100%",
+  options = list(
+    zoomKey = "ctrlKey",
+    maxHeight = 400
+  )
+)
 ```
 
 
+---
 
 # Trail Map
 
+::: {.card}
 
-```{r, echo=FALSE}
+```{r echo=FALSE, warning=FALSE}
 
-library(leaflet)
+
 leaflet() %>%
   addTiles() %>%
   addMarkers(lng = -120.444229, lat = 34.666243, popup = "Lompoc Riverbend Trail Start") %>%
-  addMarkers(lng = -120.435763, lat = 34.647437, popup = "Lompoc Riverbend Trail End") %>%
-  addCircleMarkers(
-    lng = c(-120.442545, -120.442917),
-    lat = c(34.660277, 34.660787),
-    label = c("Proposed Segment 1", "Proposed Segment 2"),
-    color = c("red4", "yellow3")
-  )
-
-
+  addMarkers(lng = -120.435763, lat = 34.647437, popup = "Lompoc Riverbend Trail End")
 
 ```
+:::
 
-# Summary Highlights
+---
 
-<div class="summary-highlight"> <ul> <li><strong>Community-Driven:</strong> Phases start with strong community engagement and advisory committees.</li> <li><strong>Fundraising & Partnerships:</strong> Early and ongoing resource development supports installation.</li> <li><strong>Installation:</strong> Pilot trail segment built with local volunteers and sustainable materials.</li> <li><strong>Stewardship & Expansion:</strong> Community stewardship teams formed, with monitoring and plans to grow.</li> </ul> </div>
+# 🤝 Community Roles in the Process
+If funded and approved, this project would move forward with deep community involvement at every stage:
 
-# Get Involved
+- Listening sessions and site selection workshops
 
-<div class="get-involved"> Stay updated and participate! Contact us at <a href="mailto:lompoctrail@example.org">lompoctrail@example.org</a> </div> 
+- Youth internships and local artist partnerships
 
-```{r, echo=FALSE}
-shinyApp(ui, server)
+- Volunteer planting days and trail builds
 
-```
+- Ongoing programming, events, and maintenance teams
+
+This proposal centers equity, access, and shared ownership — and would create a lasting legacy rooted in care.
+
+---
+
+# 📌 What’s Next?
+
+We're currently seeking:
+
+- Community feedback: Look for us at upcoming events!
+
+- Partnerships with schools, nonprofits, and city agencies
+
+- Funding through grants and in-kind support
+
+Have ideas or want to support this proposal?
+📧 Contact us at edibletrail@lompoc.org
 
