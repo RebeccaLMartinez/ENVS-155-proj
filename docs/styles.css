@@ -1,121 +1,100 @@
 
-
-body {
-  background-color: #e6f4ea !important; /* light green background */
+h1.title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #3a6f3a;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-/* ===================== */
-/* Phase Group Styling   */
-/* ===================== */
+.card {
+  background-color: white;
+  border: 4px solid #588157;
+  box-shadow: 0 0 8px 2px rgba(34, 139, 34, 0.7);
+  border-radius: 6px;
 
-/* Group Background Colors */
-.vis-time-axis .vis-background.vis-group-0 {
-  background-color: #1f77b4 !important; /* Phase 1: Blue */
-}
-.vis-time-axis .vis-background.vis-group-1 {
-  background-color: #2ca02c !important; /* Phase 2: Green */
-}
-.vis-time-axis .vis-background.vis-group-2 {
-  background-color: #ff7f0e !important; /* Phase 3: Orange */
-}
 
-/* Group Label Colors */
-.vis-labelset .vis-label.vis-group-0 {
-  color: #1f77b4 !important;
-  font-weight: bold;
-}
-.vis-labelset .vis-label.vis-group-1 {
-  color: #2ca02c !important;
-  font-weight: bold;
-}
-.vis-labelset .vis-label.vis-group-2 {
-  color: #ff7f0e !important;
-  font-weight: bold;
-}
 
-/* Allow details content to show outside the timeline item */
-.vis-item,
-.vis-item-content,
-.vis-foreground,
-.vis-group,
-.vis-timeline {
+/* Ensure visible overflow and layering for timeline items */
+.vis-item, .vis-item-content {
   overflow: visible !important;
   position: relative !important;
-  z-index: 10;
+  z-index: 9999 !important;
 }
 
-/* Style for <details> summary to make it look clickable and readable */
-details summary {
-  cursor: pointer;
-  font-weight: bold;
-  color: white;
-  outline: none; /* removes default focus outline */
-  user-select: none;
-  padding: 4px 8px;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+/* Base style for timeline items */
+.vis-item-content {
+  white-space: normal !important;       /* allow text wrap */
+  word-break: break-word !important;    /* break long words */
+  overflow-wrap: break-word !important; /* break words if needed */
+  padding: 1rem 1.5rem !important;      /* padding inside boxes */
+  font-size: 1.1rem !important;          /* larger font */
+  min-height: 3.5rem !important;         /* min height for bigger box */
+  border-radius: 8px !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  color: inherit !important;
+  background-clip: padding-box !important;
+  box-sizing: border-box !important;
 }
 
-/* Style for expanded details panel */
-details[open] {
-  background-color: rgba(255, 255, 255, 0.15); /* subtle highlight when open */
-  padding: 12px 15px;
-  border-radius: 8px;
-  margin-top: 6px;
-  color: #000;  /* Dark text for readability */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+/* Tooltip content hidden by default */
+.tooltip-content {
+  display: none;
+  position: absolute;
+  top: 110%;        /* just below the timeline item */
+  left: 0;
+  width: 300px;
+  background: #f9f9f9;
+  color: #333;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   white-space: normal;
   line-height: 1.4;
-  max-width: 350px;  /* prevent too wide dropdown */
-  word-wrap: break-word;
+  z-index: 10000;
 }
 
-/* Ensure text inside details content wraps nicely */
-details p {
-  margin: 0;
-  padding: 0;
-  color: #222;
+/* Show tooltip on hover */
+.vis-item-content:hover .tooltip-content {
+  display: block;
 }
 
-/* Optional: smooth open/close transition */
-details[open] {
-  transition: background-color 0.3s ease;
-}
-.vis-time-axis .vis-background.vis-group-0,
-.vis-time-axis .vis-background.vis-group-1,
-.vis-time-axis .vis-background.vis-group-2 {
-  height: 100% !important;          /* Full vertical height */
-  min-height: 400px !important;    /* Or match your timeline height */
-  top: 0 !important;               /* Align to top */
-  position: absolute !important;   /* Ensure absolute positioning */
-}
-.vis-timeline {
-  min-height: 400px;       /* Adjust to match timeline height */
-  overflow-y: auto;        /* Enable vertical scroll if needed */
-  position: relative;      /* To position background bands correctly */
-}
-details[open] {
-  background-color: rgba(255, 255, 255, 0.15); /* subtle background to highlight open */
-  padding: 15px;
-  border-radius: 8px;
-  max-width: 400px;       /* wider dropdown */
-  font-size: 1.1rem;      /* slightly larger text */
-  line-height: 1.5;       /* more line spacing */
-  color: #000;            /* make sure text is black */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* subtle shadow */
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  white-space: normal;
-  position: relative;     /* keep it positioned within timeline */
-  z-index: 20;            /* bring above other elements */
+.vis-item-content {
+  width: 200px !important;       /* fix width for consistent block size */
+  height: 60px !important;        /* fixed height, or you can set min-height */
+  padding: 0.75rem 1rem !important;
+  box-sizing: border-box !important;
+  border-radius: 6px !important;
+  font-size: 0.85rem !important;
+  white-space: normal !important;    /* wrap text */
+  word-wrap: break-word !important;
+  overflow: hidden !important;       /* hide overflow if needed */
+  text-overflow: ellipsis !important; /* optional: add ellipsis if clipped */
+  line-height: 1.2 !important;
+  cursor: pointer !important;
+  color: white !important;
 }
 
-/* Background and text */
-body {
-  background-color: #e6f4ea;       /* Soft pale green */
-  color: #1a3c1a;                  /* Dark forest green text */
-  font-family: 'Merriweather', serif;
-  margin: 0;
-  padding: 2rem;
-  line-height: 1.6;
+.vis-item-content {
+  max-width: 220px !important;        /* fix width to control wrapping */
+  height: 3.2rem !important;           /* about two lines of 1.6rem line-height */
+  line-height: 1.6rem !important;      /* line height for text */
+  font-size: 1rem !important;          /* readable font size */
+  white-space: normal !important;      /* allow wrapping */
+  overflow: hidden !important;         /* hide overflow */
+  text-overflow: ellipsis !important; /* show ... if text too long */
+  padding: 0.4rem 0.6rem !important;   /* balanced padding */
+  box-sizing: border-box !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  color: white !important;
+  background-clip: padding-box !important;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold !important;
+  font-size: larger !important;
 }

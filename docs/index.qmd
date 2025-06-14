@@ -1,5 +1,5 @@
 ---
-title: "🌿 Edible Trail Proposal for Growing a Healthier, Connected Lompoc"
+title: "🌿 Edible Trail Proposal: Growing a Healthier, Connected Lompoc"
 format: 
   html:
     theme: journal
@@ -10,7 +10,8 @@ format:
 ---
 
 <div style="text-align:center; margin-bottom:1.5rem;">
-  <img src="lompoc-sign.jpg" alt="Edible Trail Banner" style="max-width: 100%; height: auto; border-radius: 10px;">
+  <img src="lompoc-sign.jpg" alt="Lompoc City Sign" 
+       style="max-width: 100%; height: auto; border-radius: 12px; border: 4px solid #588157; box-shadow: 0 0 8px 2px rgba(34, 139, 34, 0.7);">
 </div>
 
 ```{r include=FALSE}
@@ -75,26 +76,25 @@ Explore the interactive timeline to see how the project will take root and grow 
 
 ::: {.card .p-3 .mb-2}
 
-<span style="display:inline-block; width:16px; height:16px; background:#1f77b4; margin-right:6px; vertical-align:middle;"></span> Phase 1: Planning & Engagement  
-<span style="display:inline-block; width:16px; height:16px; background:#2ca02c; margin-right:6px; vertical-align:middle; margin-left:10px;"></span> Phase 2: Installation & Activation  
-<span style="display:inline-block; width:16px; height:16px; background:#ff7f0e; margin-right:6px; vertical-align:middle; margin-left:10px;"></span> Phase 3: Stewardship & Expansion  
-:::
+<span style="display:inline-block; width:16px; height:16px; background:#a3a380; margin-right:6px; vertical-align:middle;"></span> Phase 1: Planning & Engagement  
+<span style="display:inline-block; width:16px; height:16px; background:#588157; margin-right:6px; vertical-align:middle; margin-left:10px;"></span> Phase 2: Installation & Activation  
+<span style="display:inline-block; width:16px; height:16px; background:#b4654a; margin-right:6px; vertical-align:middle; margin-left:10px;"></span> Phase 3: Stewardship & Expansion
 
 ```{r edible-trail-timeline, echo=FALSE}
 
 timeline_data <- data.frame(
   id = 1:10,
   content = c(
-    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">📝 Community Introduction & Feedback</summary><p style="margin-top:5px;">Gather feedback from residents and host listening sessions to shape project goals.</p></details>',
-    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">👥 Advisory Committee & Partnerships</summary><p style="margin-top:5px;">Form committee and identify key community and institutional partners.</p></details>',
-    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">📍 Site Identification & Design Workshops</summary><p style="margin-top:5px;">Hold workshops to select and design trail locations.</p></details>',
-    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">💰 Fundraising & Resource Gathering</summary><p style="margin-top:5px;">Secure funding and gather materials for trail implementation.</p></details>',
-    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">📐 Final Design & Site Prep</summary><p style="margin-top:5px;">Complete detailed designs and prepare sites for construction.</p></details>',
-    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">🌱 Community Planting & Trail Build-Out</summary><p style="margin-top:5px;">Plant native and edible species and build trail infrastructure.</p></details>',
-    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">🎉 Programming & Community Events</summary><p style="margin-top:5px;">Organize events to promote trail use and community engagement.</p></details>',
-    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">🧤 Volunteer Stewardship & Maintenance</summary><p style="margin-top:5px;">Recruit and train volunteers for ongoing trail stewardship.</p></details>',
-    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">📊 Monitoring & Feedback Loops</summary><p style="margin-top:5px;">Track trail use, collect feedback, and make improvements.</p></details>',
-    '<details><summary style="cursor:pointer; font-weight:bold; color:white;">🚀 Expansion & Policy Integration</summary><p style="margin-top:5px;">Plan future trail expansions and integrate with local policies.</p></details>'
+    "Community Introduction & Feedback",
+    "Advisory Committee & Partnerships",
+    "Site Identification & Design Workshops",
+    "Fundraising & Resource Gathering",
+    "Final Design & Site Prep",
+    "Community Planting & Trail Build-Out",
+    "Programming & Community Events",
+    "Volunteer Stewardship & Maintenance",
+    "Monitoring & Feedback Loops",
+    "Expansion & Policy Integration"
   ),
   start = as.Date(c(
     "2025-07-01", "2025-08-15", "2025-09-15", "2025-11-01",
@@ -107,31 +107,46 @@ timeline_data <- data.frame(
     "2026-10-01", "2026-12-30", "2027-03-15"
   )),
   style = c(
-    rep("background-color: #1f77b4; color: white;", 4),
-    rep("background-color: #2ca02c; color: white;", 3),
-    rep("background-color: #ff7f0e; color: white;", 3)
+    "background-color: #a3a380; color: white;",
+    "background-color: #a3a380; color: white;",
+    "background-color: #a3a380; color: white;",
+    "background-color: #a3a380; color: white;",
+    "background-color: #588157; color: white;",
+    "background-color: #588157; color: white;",
+    "background-color: #588157; color: white;",
+    "background-color: #b4654a; color: white;",
+    "background-color: #b4654a; color: white;",
+    "background-color: #b4654a; color: white;"
+  ),
+  title = c(
+    "Gather feedback from residents and host listening sessions to shape project goals.",
+    "Form committee and identify key community and institutional partners.",
+    "Hold workshops to select and design trail locations.",
+    "Secure funding and gather materials for trail implementation.",
+    "Complete detailed designs and prepare sites for construction.",
+    "Plant native and edible species and build trail infrastructure.",
+    "Organize events to promote trail use and community engagement.",
+    "Recruit and train volunteers for ongoing trail stewardship.",
+    "Track trail use, collect feedback, and make improvements.",
+    "Plan future trail expansions and integrate with local policies."
   )
 )
 
 timevis(
   timeline_data,
-  height = "250px",
+  height = "400px",
   width = "100%",
   options = list(
-    zoomKey = "ctrlKey",
-    min = as.Date("2025-07-01"),
-    max = as.Date("2027-06-30"),
-    start = as.Date("2025-07-01"),      # initial view start
-    end = as.Date("2026-06-30"),        # initial view end (12 months shown first)
+    stack = TRUE,         
+    horizontalScroll = FALSE,
     maxHeight = 800,
+    tooltip = TRUE,
     useContent = TRUE
   )
 )
 
-
-
 ```
-
+:::
 
 # Proposed Location
 
